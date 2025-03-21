@@ -42,14 +42,6 @@
         nav a:hover {
             background: #555;
         }
-        .section {
-            padding: 50px;
-            text-align: center;
-            background: white;
-            margin: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
         .slideshow-container {
             position: relative;
             max-width: 100%;
@@ -68,30 +60,21 @@
             from {opacity: 0.4;} 
             to {opacity: 1;}
         }
-        .form-container {
-            max-width: 500px;
-            margin: auto;
-            text-align: left;
-        }
-        .form-container input, .form-container textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .form-container button {
-            background: #333;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .form-container button:hover {
-            background: #555;
-        }
     </style>
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+        window.onload = showSlides;
+    </script>
 </head>
 <body>
     <header>
@@ -100,12 +83,12 @@
     </header>
     
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#join">Join Us</a>
-        <a href="#contact">Contact Us</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="join.html">Join Us</a>
+        <a href="contact.html">Contact Us</a>
     </nav>
     
     <div class="slideshow-container">
@@ -116,58 +99,99 @@
         <img class="slides fade" src="images/A_modern_commercial_shopping_complex_with_stylish_.png" alt="Project 5">
         <img class="slides fade" src="images/A_contemporary_restaurant_interior_with_warm_light.png" alt="Project 6">
     </div>
-    
-    <div class="section" id="about">
-        <h2>About Us</h2>
-        <p>BIMARCH Studio is a leading architectural firm specializing in cutting-edge design, BIM modeling, and visualization services for international clients. With years of experience in the industry, we bring innovative solutions to the built environment.</p>
-    </div>
-    
-    <div class="section" id="services">
-        <h2>Our Services</h2>
-        <p>We provide end-to-end architectural solutions, including master planning, conceptual design, detailed 3D modeling, BIM documentation, and project management. Our expertise extends to commercial, industrial, residential, and hospitality projects.</p>
-    </div>
-    
-    <div class="section" id="projects">
-        <h2>Our Projects</h2>
-        <p>Our portfolio showcases a variety of projects, including high-rise buildings, luxury resorts, industrial warehouses, and contemporary office spaces. Each project is a testament to our commitment to design excellence.</p>
-    </div>
-    
-    <div class="section" id="testimonials">
-        <h2>Client Testimonials</h2>
-        <p>"BIMARCH Studio delivered outstanding architectural solutions for our commercial project." - A leading interior design firm in the US</p>
-        <p>"Their expertise in BIM modeling helped streamline our industrial project efficiently." - A top engineering consultancy in the UK</p>
-        <p>"Exceptional design and planning services. Highly recommended for any architectural needs." - A renowned construction firm in Canada</p>
-    </div>
-    
-    <div class="section" id="join">
-        <h2>Join Us</h2>
-        <p>We are always looking for talented professionals to join our team. If you have expertise in architecture, BIM, and design visualization, send us your portfolio and be a part of BIMARCH Studio.</p>
-        <div class="form-container">
-            <form action="submit_application.php" method="post" enctype="multipart/form-data">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="experience" placeholder="Experience (years)" required>
-                <input type="text" name="education" placeholder="Education" required>
-                <label>Upload CV:</label>
-                <input type="file" name="cv" required>
-                <label>Upload Portfolio:</label>
-                <input type="file" name="portfolio" required>
-                <button type="submit">Apply Now</button>
-            </form>
-        </div>
-    </div>
-    
-    <div class="section" id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: admin@bimarchstudio.com | Phone: +91 9805232572</p>
-        <div class="form-container">
-            <form action="send_message.php" method="post">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </div>
+</body>
+</html>
+
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Us - BIMARCH Studio</title>
+</head>
+<body>
+    <h1>About Us</h1>
+    <p>BIMARCH Studio specializes in architecture, BIM, and design consultancy. We cater to international clients with a strong focus on precision and creativity.</p>
+</body>
+</html>
+
+<!-- services.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Services - BIMARCH Studio</title>
+</head>
+<body>
+    <h1>Our Services</h1>
+    <p>We offer a wide range of architectural and BIM services, including industrial, residential, commercial, and hospitality projects.</p>
+</body>
+</html>
+
+<!-- projects.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Projects - BIMARCH Studio</title>
+</head>
+<body>
+    <h1>Our Projects</h1>
+    <p>Explore our portfolio of completed projects across various industries.</p>
+</body>
+</html>
+
+<!-- testimonials.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Testimonials - BIMARCH Studio</title>
+</head>
+<body>
+    <h1>Client Testimonials</h1>
+    <p>Read what our clients have to say about our work.</p>
+</body>
+</html>
+
+<!-- join.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Join Us - BIMARCH Studio</title>
+</head>
+<body>
+    <h1>Join Our Team</h1>
+    <form>
+        <label>Name:</label><br>
+        <input type="text" name="name"><br>
+        <label>Contact:</label><br>
+        <input type="text" name="contact"><br>
+        <label>Experience:</label><br>
+        <input type="text" name="experience"><br>
+        <label>Education:</label><br>
+        <input type="text" name="education"><br>
+        <label>Upload CV:</label><br>
+        <input type="file" name="cv"><br>
+        <label>Upload Portfolio:</label><br>
+        <input type="file" name="portfolio"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us - BIMARCH Studio</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form>
+        <label>Name:</label><br>
+        <input type="text" name="name"><br>
+        <label>Email:</label><br>
+        <input type="email" name="email"><br>
+        <label>Message:</label><br>
+        <textarea name="message"></textarea><br>
+        <input type="submit" value="Send Message">
+    </form>
 </body>
 </html>
