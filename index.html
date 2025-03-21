@@ -24,8 +24,8 @@
             justify-content: center;
         }
         .logo {
-            width: 80px;
-            height: auto;
+            width: 50px;
+            height: 50px;
             margin-right: 15px;
         }
         nav {
@@ -41,6 +41,14 @@
         }
         nav a:hover {
             background: #555;
+        }
+        .section {
+            padding: 50px;
+            text-align: center;
+            background: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .slideshow-container {
             position: relative;
@@ -61,20 +69,6 @@
             to {opacity: 1;}
         }
     </style>
-    <script>
-        let slideIndex = 0;
-        function showSlides() {
-            let slides = document.getElementsByClassName("slides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000);
-        }
-        window.onload = showSlides;
-    </script>
 </head>
 <body>
     <header>
@@ -83,12 +77,12 @@
     </header>
     
     <nav>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="projects.html">Projects</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="join.html">Join Us</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#join">Join Us</a>
+        <a href="#contact">Contact Us</a>
     </nav>
     
     <div class="slideshow-container">
@@ -99,5 +93,53 @@
         <img class="slides fade" src="images/A_modern_commercial_shopping_complex_with_stylish_.png" alt="Project 5">
         <img class="slides fade" src="images/A_contemporary_restaurant_interior_with_warm_light.png" alt="Project 6">
     </div>
+    
+    <div class="section" id="about">
+        <h2>About Us</h2>
+        <p>BIMARCH Studio is a leading architectural firm specializing in cutting-edge design, BIM modeling, and visualization services for international clients. With years of experience in the industry, we bring innovative solutions to the built environment.</p>
+    </div>
+    
+    <div class="section" id="services">
+        <h2>Our Services</h2>
+        <p>We provide end-to-end architectural solutions, including master planning, conceptual design, detailed 3D modeling, BIM documentation, and project management. Our expertise extends to commercial, industrial, residential, and hospitality projects.</p>
+    </div>
+    
+    <div class="section" id="projects">
+        <h2>Our Projects</h2>
+        <p>Our portfolio showcases a variety of projects, including high-rise buildings, luxury resorts, industrial warehouses, and contemporary office spaces. Each project is a testament to our commitment to design excellence.</p>
+    </div>
+    
+    <div class="section" id="testimonials">
+        <h2>Client Testimonials</h2>
+        <p>"BIMARCH Studio delivered outstanding architectural solutions for our commercial project." - A leading interior design firm in the US</p>
+        <p>"Their expertise in BIM modeling helped streamline our industrial project efficiently." - A top engineering consultancy in the UK</p>
+        <p>"Exceptional design and planning services. Highly recommended for any architectural needs." - A renowned construction firm in Canada</p>
+    </div>
+    
+    <div class="section" id="join">
+        <h2>Join Us</h2>
+        <p>We are always looking for talented professionals to join our team. If you have expertise in architecture, BIM, and design visualization, send us your portfolio and be a part of BIMARCH Studio.</p>
+    </div>
+    
+    <div class="section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: admin@bimarchstudio.com | Phone: +91 9805232572</p>
+    </div>
+    
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
 </body>
 </html>
