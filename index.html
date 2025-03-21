@@ -9,154 +9,130 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('images/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
+            background-color: #f4f4f4;
         }
         header {
-            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            background: #333;
             color: white;
             padding: 20px;
+            font-size: 24px;
+        }
+        nav {
             text-align: center;
+            padding: 10px;
+            background: #444;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
+        nav a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            padding: 10px 15px;
+            display: inline-block;
         }
-        section {
-            padding: 20px;
+        nav a:hover {
+            background: #555;
+        }
+        .section {
+            padding: 50px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
+            background: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .slideshow-container {
             position: relative;
             max-width: 100%;
+            margin: auto;
+            overflow: hidden;
         }
-        .slide img {
+        .slides {
+            display: none;
             width: 100%;
-            border-radius: 10px;
+            transition: opacity 1s ease-in-out;
         }
-        .cta-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
+        .fade {
+            animation: fadeEffect 1s;
         }
-        footer {
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        @keyframes fadeEffect {
+            from {opacity: 0.4;} 
+            to {opacity: 1;}
         }
     </style>
-    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>BIMARCH Studio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#join-us">Join Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        Welcome to BIMARCH Studio
     </header>
     
-    <section id="about">
-        <h2>About Us</h2>
-        <p>BIMARCH Studio is a global AEC outsourcing firm specializing in BIM and CAD services. We provide top-quality architectural and engineering support to clients in the UK, US, Dubai, Australia, and Singapore.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>BIM Modeling & Coordination</li>
-            <li>CAD Drafting & Documentation</li>
-            <li>3D Visualization & Rendering</li>
-            <li>Scan to BIM Conversion</li>
-            <li>Revit Family Creation</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>Our Projects</h2>
-        <div class="slideshow-container">
-            <div class="slide fade"><img src="images/project1.jpg" alt="Project 1"></div>
-            <div class="slide fade"><img src="images/project2.jpg" alt="Project 2"></div>
-            <div class="slide fade"><img src="images/project3.jpg" alt="Project 3"></div>
-            <div class="slide fade"><img src="images/project4.jpg" alt="Project 4"></div>
-            <div class="slide fade"><img src="images/project5.jpg" alt="Project 5"></div>
-            <div class="slide fade"><img src="images/project6.jpg" alt="Project 6"></div>
-            <div class="slide fade"><img src="images/project7.jpg" alt="Project 7"></div>
-            <div class="slide fade"><img src="images/project8.jpg" alt="Project 8"></div>
-            <div class="slide fade"><img src="images/project9.jpg" alt="Project 9"></div>
-            <div class="slide fade"><img src="images/project10.jpg" alt="Project 10"></div>
-        </div>
-    </section>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#join">Join Us</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
     
-    <section id="testimonials">
+    <div class="slideshow-container">
+        <img class="slides fade" src="images/A_modern_architectural_office_building_with_a_glas.png" alt="Project 1">
+        <img class="slides fade" src="images/A_luxurious_hotel_lobby_with_a_grand_chandelier,_m.png" alt="Project 2">
+        <img class="slides fade" src="images/An_industrial_warehouse_with_a_high-tech_interior,.png" alt="Project 3">
+        <img class="slides fade" src="images/A_high-end_residential_villa_with_a_sleek_modern_d.png" alt="Project 4">
+        <img class="slides fade" src="images/A_modern_commercial_shopping_complex_with_stylish_.png" alt="Project 5">
+        <img class="slides fade" src="images/A_contemporary_restaurant_interior_with_warm_light.png" alt="Project 6">
+        <img class="slides fade" src="images/A_futuristic_office_workspace_with_sleek_furniture.png" alt="Project 7">
+        <img class="slides fade" src="images/A_luxury_resort_with_an_infinity_pool_overlooking_.png" alt="Project 8">
+        <img class="slides fade" src="images/A_modern_retail_showroom_with_large_glass_windows,.png" alt="Project 9">
+        <img class="slides fade" src="images/An_elegant_co-working_space_with_a_modern_industri.png" alt="Project 10">
+    </div>
+    
+    <div class="section" id="about">
+        <h2>About Us</h2>
+        <p>BIMARCH Studio specializes in architectural design, BIM modeling, and visualization services for global clients.</p>
+    </div>
+    
+    <div class="section" id="services">
+        <h2>Our Services</h2>
+        <p>We offer architectural design, 3D modeling, BIM services, and project consultancy across various sectors.</p>
+    </div>
+    
+    <div class="section" id="projects">
+        <h2>Our Projects</h2>
+        <p>Explore our diverse portfolio of commercial, industrial, hospitality, and residential projects.</p>
+    </div>
+    
+    <div class="section" id="testimonials">
         <h2>Client Testimonials</h2>
-        <blockquote>“BIMARCH Studio transformed our vision into reality. Their expertise is unparalleled!” - Client A</blockquote>
-        <blockquote>“A truly professional team delivering top-notch results.” - Client B</blockquote>
-    </section>
-
-    <section id="join-us">
+        <p>"BIMARCH Studio delivered outstanding architectural solutions for our commercial project." - A leading interior design firm in the US</p>
+        <p>"Their expertise in BIM modeling helped streamline our industrial project efficiently." - A top engineering consultancy in the UK</p>
+        <p>"Exceptional design and planning services. Highly recommended for any architectural needs." - A renowned construction firm in Canada</p>
+    </div>
+    
+    <div class="section" id="join">
         <h2>Join Us</h2>
-        <form action="submit_form.php" method="post" enctype="multipart/form-data">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="contact">Contact:</label>
-            <input type="text" id="contact" name="contact" required>
-            
-            <label for="experience">Experience:</label>
-            <input type="text" id="experience" name="experience" required>
-            
-            <label for="education">Education:</label>
-            <input type="text" id="education" name="education" required>
-            
-            <label for="cv">Upload CV:</label>
-            <input type="file" id="cv" name="cv" required>
-            
-            <label for="portfolio">Upload Portfolio:</label>
-            <input type="file" id="portfolio" name="portfolio" required>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-
-    <section id="contact">
+        <p>Interested in working with us? Submit your details and portfolio to become a part of our team.</p>
+    </div>
+    
+    <div class="section" id="contact">
         <h2>Contact Us</h2>
-        <p>Email: admin@bimarchstudio.com</p>
-        <p>Phone: +91 9805232572</p>
-        <a href="mailto:admin@bimarchstudio.com" class="cta-button">Email Us</a>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 BIMARCH Studio. All rights reserved.</p>
-    </footer>
+        <p>Email: admin@bimarchstudio.com | Phone: +91 9805232572</p>
+    </div>
+    
+    <script>
+        let slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+    </script>
 </body>
 </html>
