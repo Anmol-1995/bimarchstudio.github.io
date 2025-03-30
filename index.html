@@ -25,9 +25,10 @@
             font-weight: 600;
         }
         .logo {
-            width: 60px;
-            height: 60px;
+            width: 150px;
+            height: auto;
             margin-right: 20px;
+            cursor: pointer;
         }
         nav {
             text-align: center;
@@ -50,7 +51,10 @@
             border-radius: 5px;
         }
         .hero {
-            background: url('images/A_modern_architectural_office_building_with_a_glas.png') center/cover no-repeat;
+            background: url('images/A modern_office_building.png') center/cover repeat;
+            background: url('images/A_luxurious_hotel_lobby_with_a_grand_chandelier.png') center/cover repeat;
+            background: url('images/An_industrial_warehouse_with_a_high-tech_interior.png') center/cover repeat;
+           
             height: 90vh;
             display: flex;
             align-items: center;
@@ -60,6 +64,7 @@
             font-size: 32px;
             font-weight: 600;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            animation: fadeIn 2s ease-in;
         }
         .section {
             padding: 60px;
@@ -69,15 +74,7 @@
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             max-width: 900px;
-        }
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        .slide {
             display: none;
-            width: 100%;
         }
         .footer {
             background: #222;
@@ -86,73 +83,84 @@
             padding: 20px;
             margin-top: 50px;
         }
+        .testimonial-slide {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 20px;
+            animation: slideIn 2s ease-in;
+        }
+        .testimonial {
+            min-width: 300px;
+            margin: 0 10px;
+            padding: 20px;
+            background: #eee;
+            border-radius: 8px;
+            scroll-snap-align: center;
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="images/logo.png" alt="BIMARCH Logo" class="logo">
+        <img src="images/logo.png" alt="BIMARCH Logo" class="logo" onclick="window.location.href='index.html'">
         BIMARCH Studio
     </header>
     
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#careers">Careers</a>
-        <a href="#whywork">Why Work With Us</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#" onclick="toggleSection('about')">About Us</a>
+        <a href="#" onclick="toggleSection('services')">Services</a>
+        <a href="#" onclick="toggleSection('projects')">Projects</a>
+        <a href="#" onclick="toggleSection('careers')">Careers</a>
+        <a href="#" onclick="toggleSection('whywork')">Why Join Us</a>
+        <a href="#" onclick="toggleSection('contact')">Contact Us</a>
     </nav>
     
     <div class="hero">Innovative Architecture & BIM Solutions</div>
     
-    <div class="slideshow-container">
-        <img class="slide" src="images/hospitality1.png">
-        <img class="slide" src="images/industrial1.png">
-        <img class="slide" src="images/commercial1.png">
-        <img class="slide" src="images/residential1.png">
-    </div>
-    
     <div class="section" id="about">
         <h2>About Us</h2>
-        <p>BIMARCH Studio was founded with the vision to revolutionize the AEC industry through cutting-edge BIM solutions. Our journey began with a passion for precision and innovation.</p>
-        <p>We specialize in delivering architectural, CAD drafting, and BIM services tailored to international standards. Our commitment to quality, sustainability, and efficiency sets us apart.</p>
-        <p>What makes us different? We leverage technology, expertise, and creativity to provide unparalleled design solutions. We are your trusted partner in achieving excellence.</p>
+        <p>BIMARCH Studio was founded with the vision to revolutionize the AEC industry through cutting-edge BIM solutions.</p>
+        <h3>Our Mission</h3>
+        <p>To provide top-tier architectural and BIM services, enhancing efficiency and quality across all projects.</p>
+        <h3>Our Story</h3>
+        <p>We started as a small firm with a passion for architectural innovation and have grown into a trusted name in the industry.</p>
     </div>
     
     <div class="section" id="services">
         <h2>Our Services</h2>
         <ul>
-            <li>Hospitality CAD Drafting</li>
-            <li>Industrial BIM Modeling</li>
-            <li>Commercial Architectural Design</li>
-            <li>Residential 3D Visualization</li>
-            <li>Retail Space Planning</li>
+            <li>CAD Drafting</li>
+            <li>BIM Modeling</li>
+            <li>3D Visualization</li>
+            <li>Clash Detection</li>
+            <li>Quantity Takeoff</li>
         </ul>
     </div>
     
     <div class="section" id="projects">
         <h2>Our Projects</h2>
-        <h3>Hospitality</h3>
-        <img src="images/hospitality1.png">
-        <h3>Industrial</h3>
-        <img src="images/industrial1.png">
-        <h3>Commercial</h3>
-        <img src="images/commercial1.png">
-        <h3>Residential</h3>
-        <img src="images/residential1.png">
+        <ul>
+            <li>Hospitality</li>
+            <li>Industrial</li>
+            <li>Commercial</li>
+            <li>Residential</li>
+            <li>Retail</li>
+        </ul>
+        <img src="images/A_luxurious_hotel_lobby_with_a_grand_chandelier,_m.png" alt="Project 2">
+        <img src="images/An_industrial_warehouse_with_a_high-tech_interior,.png" alt="Project 3">
+        <img src="images/A_modern_architectural_office_building_with_a_glas.png" alt="Project 1">
+        <img src="images/A_high-end_residential_villa_with_a_sleek_modern_d.png" alt="Project 4">
+        <img src="images/A_modern_commercial_shopping_complex_with_stylish_.png" alt="Project 4">
+        <img src="A_contemporary_restaurant_interior_with_warm_light.png" alt="Project 4">
     </div>
     
     <div class="section" id="whywork">
-        <h2>Why Work With Us?</h2>
-        <h3>For Clients</h3>
-        <p>We bring global expertise, precision, and efficiency to every project. Our team ensures timely delivery and top-tier quality in architectural and BIM services.</p>
-        <h3>For Employees</h3>
-        <p>Join a dynamic team of industry experts. We offer career growth, cutting-edge projects, and a collaborative work environment.</p>
+        <h2>Why Join Us?</h2>
+        <p>We offer professional growth, international exposure, and a collaborative environment.</p>
     </div>
     
     <div class="section" id="careers">
         <h2>Careers</h2>
-        <p>Join our team of skilled architects and BIM experts.</p>
         <button onclick="window.location.href='join.html'">Apply Now</button>
     </div>
     
@@ -161,19 +169,19 @@
         <p>Email: admin@bimarchstudio.com | Phone: +91 9805232572</p>
     </div>
     
+    <div class="testimonial-slide">
+        <div class="testimonial">Client A: "Amazing work!"</div>
+        <div class="testimonial">Client B: "Great experience!"</div>
+        <div class="testimonial">Client C: "Highly recommended!"</div>
+    </div>
+    
     <div class="footer">&copy; 2025 BIMARCH Studio. All Rights Reserved.</div>
     
     <script>
-        function showSlides() {
-            let slides = document.querySelectorAll(".slide");
-            slides.forEach(slide => slide.style.display = "none");
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000);
+        function toggleSection(id) {
+            document.querySelectorAll('.section').forEach(section => section.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
         }
-        let slideIndex = 0;
-        showSlides();
     </script>
 </body>
 </html>
