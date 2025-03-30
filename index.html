@@ -25,7 +25,7 @@
             font-weight: 600;
         }
         .logo {
-            width: 200px;
+            width: 150px;
             height: auto;
             margin-right: 20px;
             cursor: pointer;
@@ -51,7 +51,7 @@
             border-radius: 5px;
         }
         .hero {
-            background: url('images/A_modern_architectural_office_building_with_a_glas.png') center/cover no-repeat;
+            background: url('images/modern_office_building.png') center/cover no-repeat;
             height: 90vh;
             display: flex;
             align-items: center;
@@ -80,6 +80,21 @@
             padding: 20px;
             margin-top: 50px;
         }
+        .testimonial-slide {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 20px;
+            animation: slideIn 2s ease-in;
+        }
+        .testimonial {
+            min-width: 300px;
+            margin: 0 10px;
+            padding: 20px;
+            background: #eee;
+            border-radius: 8px;
+            scroll-snap-align: center;
+        }
     </style>
 </head>
 <body>
@@ -92,9 +107,8 @@
         <a href="#" onclick="toggleSection('about')">About Us</a>
         <a href="#" onclick="toggleSection('services')">Services</a>
         <a href="#" onclick="toggleSection('projects')">Projects</a>
-        <a href="#" onclick="toggleSection('testimonials')">Testimonials</a>
-        <a href="#" onclick="toggleSection('careers')">Join Us</a>
-        <a href="#" onclick="toggleSection('whywork')">Why Work With Us</a>
+        <a href="#" onclick="toggleSection('careers')">Careers</a>
+        <a href="#" onclick="toggleSection('whywork')">Why Join Us</a>
         <a href="#" onclick="toggleSection('contact')">Contact Us</a>
     </nav>
     
@@ -102,42 +116,58 @@
     
     <div class="section" id="about">
         <h2>About Us</h2>
-        <p>BIMARCH Studio is an international architectural and BIM services firm, delivering cutting-edge solutions in design, planning, and project visualization. Our expertise spans across commercial, residential, industrial, and hospitality projects.</p>
-        <p>With a keen focus on innovation and efficiency, we empower our clients by leveraging the latest in Building Information Modeling (BIM) technologies. Our team of highly skilled architects and BIM professionals ensures that every project is executed with precision and creativity.</p>
-        <p>We collaborate with clients in the USA, UK, Dubai, Australia, and Singapore, providing tailored architectural and BIM solutions that drive excellence in design and execution.</p>
+        <p>BIMARCH Studio was founded with the vision to revolutionize the AEC industry through cutting-edge BIM solutions.</p>
+        <h3>Our Mission</h3>
+        <p>To provide top-tier architectural and BIM services, enhancing efficiency and quality across all projects.</p>
+        <h3>Our Story</h3>
+        <p>We started as a small firm with a passion for architectural innovation and have grown into a trusted name in the industry.</p>
     </div>
     
     <div class="section" id="services">
         <h2>Our Services</h2>
-        <p>We offer a wide range of architectural and BIM services, including design, drafting, 3D modeling, and project visualization.</p>
+        <ul>
+            <li>CAD Drafting</li>
+            <li>BIM Modeling</li>
+            <li>3D Visualization</li>
+            <li>Clash Detection</li>
+            <li>Quantity Takeoff</li>
+        </ul>
     </div>
     
     <div class="section" id="projects">
         <h2>Our Projects</h2>
-        <p>Take a look at some of our completed projects across residential, commercial, industrial, and hospitality sectors.</p>
+        <ul>
+            <li>Hospitality</li>
+            <li>Industrial</li>
+            <li>Commercial</li>
+            <li>Residential</li>
+            <li>Retail</li>
+        </ul>
+        <img src="images/hospitality_project.png">
+        <img src="images/industrial_project.png">
+        <img src="images/commercial_project.png">
+        <img src="images/residential_project.png">
     </div>
     
-    <div class="section" id="testimonials">
-        <h2>Client Testimonials</h2>
-        <p>Our clients trust us to deliver exceptional results. Here's what they have to say about working with us.</p>
+    <div class="section" id="whywork">
+        <h2>Why Join Us?</h2>
+        <p>We offer professional growth, international exposure, and a collaborative environment.</p>
     </div>
     
     <div class="section" id="careers">
-        <h2>Join Us</h2>
-        <p>We are always looking for talented architects and BIM professionals. Whether you're an experienced professional or a student seeking an internship, we welcome you to apply.</p>
-        <form>
-            <label>Name:</label><br>
-            <input type="text" name="name" required><br><br>
-            <label>Email:</label><br>
-            <input type="email" name="email" required><br><br>
-            <label>Experience:</label><br>
-            <input type="text" name="experience"><br><br>
-            <label>Education:</label><br>
-            <input type="text" name="education"><br><br>
-            <label>Upload CV & Portfolio:</label><br>
-            <input type="file" name="portfolio"><br><br>
-            <button type="submit">Submit</button>
-        </form>
+        <h2>Careers</h2>
+        <button onclick="window.location.href='join.html'">Apply Now</button>
+    </div>
+    
+    <div class="section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: admin@bimarchstudio.com | Phone: +91 9805232572</p>
+    </div>
+    
+    <div class="testimonial-slide">
+        <div class="testimonial">Client A: "Amazing work!"</div>
+        <div class="testimonial">Client B: "Great experience!"</div>
+        <div class="testimonial">Client C: "Highly recommended!"</div>
     </div>
     
     <div class="footer">&copy; 2025 BIMARCH Studio. All Rights Reserved.</div>
