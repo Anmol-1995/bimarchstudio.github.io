@@ -38,13 +38,17 @@
             text-decoration: none;
             padding: 10px 15px;
             display: inline-block;
-            cursor: pointer;
         }
         nav a:hover {
             background: #555;
         }
-        .hidden {
-            display: none;
+        .section {
+            padding: 50px;
+            text-align: center;
+            background: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         .slideshow-container {
             position: relative;
@@ -69,16 +73,16 @@
 <body>
     <header>
         <img src="images/logo.png" alt="BIMARCH Logo" class="logo">
-        <span>Innovative Architecture & Design Solutions for a Global Future</span>
+        Welcome to BIMARCH Studio
     </header>
     
     <nav>
-        <a onclick="showSection('about')">About Us</a>
-        <a onclick="showSection('services')">Services</a>
-        <a onclick="showSection('projects')">Projects</a>
-        <a onclick="showSection('testimonials')">Testimonials</a>
-        <a onclick="showSection('join')">Join Us</a>
-        <a onclick="showSection('contact')">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#join">Join Us</a>
+        <a href="#contact">Contact Us</a>
     </nav>
     
     <div class="slideshow-container">
@@ -90,31 +94,36 @@
         <img class="slides fade" src="images/A_contemporary_restaurant_interior_with_warm_light.png" alt="Project 6">
     </div>
     
-    <div class="section hidden" id="about">
+    <div class="section" id="about">
         <h2>About Us</h2>
-        <p>BIMARCH Studio is a forward-thinking architecture firm that integrates contemporary design with advanced Building Information Modeling (BIM) technology. Founded with a passion for transforming spaces, our team is committed to creating designs that are not only aesthetically captivating but also sustainable and future-proof. We work with clients worldwide, ensuring each project reflects the unique needs and culture of the communities we serve.</p>
+        <p>BIMARCH Studio is a leading architectural firm specializing in cutting-edge design, BIM modeling, and visualization services for international clients. With years of experience in the industry, we bring innovative solutions to the built environment.</p>
     </div>
     
-    <div class="section hidden" id="projects">
+    <div class="section" id="services">
+        <h2>Our Services</h2>
+        <p>We provide end-to-end architectural solutions, including master planning, conceptual design, detailed 3D modeling, BIM documentation, and project management. Our expertise extends to commercial, industrial, residential, and hospitality projects.</p>
+    </div>
+    
+    <div class="section" id="projects">
         <h2>Our Projects</h2>
-        <p>At BIMARCH Studio, we take pride in the diverse portfolio we've built over the past few years. From luxury resorts to modern industrial facilities, each project reflects our commitment to excellence, precision, and innovative design.</p>
+        <p>Our portfolio showcases a variety of projects, including high-rise buildings, luxury resorts, industrial warehouses, and contemporary office spaces. Each project is a testament to our commitment to design excellence.</p>
     </div>
     
-    <div class="section hidden" id="testimonials">
+    <div class="section" id="testimonials">
         <h2>Client Testimonials</h2>
         <p>"BIMARCH Studio delivered outstanding architectural solutions for our commercial project." - A leading interior design firm in the US</p>
+        <p>"Their expertise in BIM modeling helped streamline our industrial project efficiently." - A top engineering consultancy in the UK</p>
+        <p>"Exceptional design and planning services. Highly recommended for any architectural needs." - A renowned construction firm in Canada</p>
     </div>
     
-    <div class="section hidden" id="join">
+    <div class="section" id="join">
         <h2>Join Us</h2>
-        <p>We are always on the lookout for passionate, talented individuals who share our vision of transforming spaces through innovative design.</p>
+        <p>We are always looking for talented professionals to join our team. If you have expertise in architecture, BIM, and design visualization, send us your portfolio and be a part of BIMARCH Studio.</p>
     </div>
     
-    <div class="section hidden" id="contact">
+    <div class="section" id="contact">
         <h2>Contact Us</h2>
-        <p>Email: info@bimarchstudio.com</p>
-        <p>Phone: +91 123 456 7890</p>
-        <p>Address: Sector 34, Chandigarh, India</p>
+        <p>Email: admin@bimarchstudio.com | Phone: +91 9805232572</p>
     </div>
     
     <script>
@@ -130,14 +139,6 @@
             if (slideIndex > slides.length) {slideIndex = 1}
             slides[slideIndex-1].style.display = "block";
             setTimeout(showSlides, 3000);
-        }
-        
-        function showSection(sectionId) {
-            let sections = document.getElementsByClassName("section");
-            for (let i = 0; i < sections.length; i++) {
-                sections[i].classList.add("hidden");
-            }
-            document.getElementById(sectionId).classList.remove("hidden");
         }
     </script>
 </body>
