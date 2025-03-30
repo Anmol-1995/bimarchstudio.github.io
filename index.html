@@ -38,6 +38,7 @@
             text-decoration: none;
             padding: 10px 15px;
             display: inline-block;
+            cursor: pointer;
         }
         nav a:hover {
             background: #555;
@@ -68,16 +69,16 @@
 <body>
     <header>
         <img src="images/logo.png" alt="BIMARCH Logo" class="logo">
-        <span>BIMARCH STUDIO - Innovative Architecture & Design Solutions for a Global Future</span>
+        <span>Innovative Architecture & Design Solutions for a Global Future</span>
     </header>
     
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#join">Join Us</a>
-        <a href="#contact">Contact Us</a>
+        <a onclick="showSection('about')">About Us</a>
+        <a onclick="showSection('services')">Services</a>
+        <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('testimonials')">Testimonials</a>
+        <a onclick="showSection('join')">Join Us</a>
+        <a onclick="showSection('contact')">Contact Us</a>
     </nav>
     
     <div class="slideshow-container">
@@ -91,12 +92,12 @@
     
     <div class="section hidden" id="about">
         <h2>About Us</h2>
-        <p>BIMARCH Studio is a forward-thinking architecture firm that integrates contemporary design with advanced Building Information Modeling (BIM) technology...</p>
+        <p>BIMARCH Studio is a forward-thinking architecture firm that integrates contemporary design with advanced Building Information Modeling (BIM) technology. Founded with a passion for transforming spaces, our team is committed to creating designs that are not only aesthetically captivating but also sustainable and future-proof. We work with clients worldwide, ensuring each project reflects the unique needs and culture of the communities we serve.</p>
     </div>
     
     <div class="section hidden" id="projects">
         <h2>Our Projects</h2>
-        <p>At BIMARCH Studio, we take pride in the diverse portfolio we've built over the past few years...</p>
+        <p>At BIMARCH Studio, we take pride in the diverse portfolio we've built over the past few years. From luxury resorts to modern industrial facilities, each project reflects our commitment to excellence, precision, and innovative design.</p>
     </div>
     
     <div class="section hidden" id="testimonials">
@@ -106,12 +107,13 @@
     
     <div class="section hidden" id="join">
         <h2>Join Us</h2>
-        <p>We are always on the lookout for passionate, talented individuals who share our vision...</p>
+        <p>We are always on the lookout for passionate, talented individuals who share our vision of transforming spaces through innovative design.</p>
     </div>
     
     <div class="section hidden" id="contact">
         <h2>Contact Us</h2>
-        <p>Email: info@bimarchstudio.com | Phone: +91 123 456 7890</p>
+        <p>Email: info@bimarchstudio.com</p>
+        <p>Phone: +91 123 456 7890</p>
         <p>Address: Sector 34, Chandigarh, India</p>
     </div>
     
@@ -128,6 +130,14 @@
             if (slideIndex > slides.length) {slideIndex = 1}
             slides[slideIndex-1].style.display = "block";
             setTimeout(showSlides, 3000);
+        }
+        
+        function showSection(sectionId) {
+            let sections = document.getElementsByClassName("section");
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].classList.add("hidden");
+            }
+            document.getElementById(sectionId).classList.remove("hidden");
         }
     </script>
 </body>
