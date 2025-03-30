@@ -22,8 +22,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            z-index: 10;
             font-weight: 600;
         }
         .logo {
@@ -71,13 +69,6 @@
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             max-width: 900px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s, transform 0.5s;
-        }
-        .section.active {
-            opacity: 1;
-            transform: translateY(0);
         }
         .slideshow-container {
             position: relative;
@@ -104,11 +95,12 @@
     </header>
     
     <nav>
-        <a href="#about" onclick="showSection('about')">About Us</a>
-        <a href="#services" onclick="showSection('services')">Services</a>
-        <a href="#projects" onclick="showSection('projects')">Projects</a>
-        <a href="#careers" onclick="showSection('careers')">Careers</a>
-        <a href="#contact" onclick="showSection('contact')">Contact Us</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#careers">Careers</a>
+        <a href="#whywork">Why Work With Us</a>
+        <a href="#contact">Contact Us</a>
     </nav>
     
     <div class="hero">Innovative Architecture & BIM Solutions</div>
@@ -122,9 +114,9 @@
     
     <div class="section" id="about">
         <h2>About Us</h2>
-        <p>BIMARCH Studio was founded with the mission to revolutionize architecture and BIM services. With years of expertise, we have worked across various industry sectors, delivering innovative and efficient solutions.</p>
-        <p>Our core values center around precision, sustainability, and cutting-edge design. We believe in crafting functional spaces that align with modern needs while preserving aesthetic appeal.</p>
-        <p>What makes us different? Our commitment to quality, technological expertise, and a deep understanding of architectural trends worldwide. We are the preferred partner for firms seeking excellence in design and execution.</p>
+        <p>BIMARCH Studio was founded with the vision to revolutionize the AEC industry through cutting-edge BIM solutions. Our journey began with a passion for precision and innovation.</p>
+        <p>We specialize in delivering architectural, CAD drafting, and BIM services tailored to international standards. Our commitment to quality, sustainability, and efficiency sets us apart.</p>
+        <p>What makes us different? We leverage technology, expertise, and creativity to provide unparalleled design solutions. We are your trusted partner in achieving excellence.</p>
     </div>
     
     <div class="section" id="services">
@@ -150,9 +142,17 @@
         <img src="images/residential1.png">
     </div>
     
+    <div class="section" id="whywork">
+        <h2>Why Work With Us?</h2>
+        <h3>For Clients</h3>
+        <p>We bring global expertise, precision, and efficiency to every project. Our team ensures timely delivery and top-tier quality in architectural and BIM services.</p>
+        <h3>For Employees</h3>
+        <p>Join a dynamic team of industry experts. We offer career growth, cutting-edge projects, and a collaborative work environment.</p>
+    </div>
+    
     <div class="section" id="careers">
         <h2>Careers</h2>
-        <p>Join our dynamic team of architects and BIM experts.</p>
+        <p>Join our team of skilled architects and BIM experts.</p>
         <button onclick="window.location.href='join.html'">Apply Now</button>
     </div>
     
@@ -164,12 +164,6 @@
     <div class="footer">&copy; 2025 BIMARCH Studio. All Rights Reserved.</div>
     
     <script>
-        function showSection(id) {
-            let sections = document.querySelectorAll(".section");
-            sections.forEach(section => section.classList.remove("active"));
-            document.getElementById(id).classList.add("active");
-        }
-        let slideIndex = 0;
         function showSlides() {
             let slides = document.querySelectorAll(".slide");
             slides.forEach(slide => slide.style.display = "none");
@@ -178,6 +172,7 @@
             slides[slideIndex-1].style.display = "block";
             setTimeout(showSlides, 3000);
         }
+        let slideIndex = 0;
         showSlides();
     </script>
 </body>
