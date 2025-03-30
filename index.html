@@ -5,145 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIMARCH Studio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #fff;
+            overflow-x: hidden;
         }
         header {
             text-align: center;
-            background: #333;
+            background: #222;
             color: white;
-            padding: 20px;
-            font-size: 24px;
-            font-family: 'Poppins', sans-serif;
+            padding: 30px;
+            font-size: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: 600;
         }
         .logo {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
+            width: 200px;
+            height: auto;
+            margin-right: 20px;
+            cursor: pointer;
         }
         nav {
             text-align: center;
-            padding: 10px;
-            background: #444;
+            padding: 15px;
+            background: #333;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 15px;
+            padding: 12px 20px;
             display: inline-block;
+            font-weight: 600;
+            transition: background 0.3s;
         }
         nav a:hover {
-            background: #555;
+            background: #444;
+            border-radius: 5px;
+        }
+        .hero {
+            background: url('images/A_modern_architectural_office_building_with_a_glas.png') center/cover no-repeat;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            animation: fadeIn 2s ease-in;
         }
         .section {
-            padding: 50px;
+            padding: 60px;
             text-align: center;
             background: white;
-            margin: 20px;
+            margin: 40px auto;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .slides {
+            max-width: 900px;
             display: none;
-            width: 100%;
-            transition: opacity 1s ease-in-out;
         }
-        .fade {
-            animation: fadeEffect 1s;
-        }
-        @keyframes fadeEffect {
-            from {opacity: 0.4;} 
-            to {opacity: 1;}
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="images/logo.png" alt="BIMARCH Logo" class="logo">
-        Innovative Architecture & Design Solutions for a Global Future
+        <img src="images/logo.png" alt="BIMARCH Logo" class="logo" onclick="window.location.href='index.html'">
+        BIMARCH Studio
     </header>
     
     <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#join">Join Us</a>
-        <a href="#contact">Contact Us</a>
+        <a href="#" onclick="toggleSection('about')">About Us</a>
+        <a href="#" onclick="toggleSection('services')">Services</a>
+        <a href="#" onclick="toggleSection('projects')">Projects</a>
+        <a href="#" onclick="toggleSection('testimonials')">Testimonials</a>
+        <a href="#" onclick="toggleSection('careers')">Join Us</a>
+        <a href="#" onclick="toggleSection('whywork')">Why Work With Us</a>
+        <a href="#" onclick="toggleSection('contact')">Contact Us</a>
     </nav>
     
-    <div class="slideshow-container">
-        <img class=a"slides fade" src="images/A_modern_architectural_office_building_with_a_glas.png" alt="Project 1">
-        <img class="slides fade" src="images/A_luxurious_hotel_lobby_with_a_grand_chandelier,_m.png" alt="Project 2">
-        <img class="slides fade" src="images/An_industrial_warehouse_with_a_high-tech_interior,.png" alt="Project 3">
-        <img class="slides fade" src="images/A_high-end_residential_villa_with_a_sleek_modern_d.png" alt="Project 4">
-        <img class="slides fade" src="images/A_modern_commercial_shopping_complex_with_stylish_.png" alt="Project 5">
-        <img class="slides fade" src="images/A_contemporary_restaurant_interior_with_warm_light.png" alt="Project 6">
-    </div>
+    <div class="hero">Innovative Architecture & BIM Solutions</div>
     
     <div class="section" id="about">
         <h2>About Us</h2>
-        <p>BIMARCH Studio is a forward-thinking architecture firm that integrates contemporary design with advanced Building Information Modeling (BIM) technology. Founded with a passion for transforming spaces, our team is committed to creating designs that are not only aesthetically captivating but also sustainable and future-proof. We work with clients worldwide, ensuring each project reflects the unique needs and culture of the communities we serve.</p>
+        <p>BIMARCH Studio is an international architectural and BIM services firm, delivering cutting-edge solutions in design, planning, and project visualization. Our expertise spans across commercial, residential, industrial, and hospitality projects.</p>
+        <p>With a keen focus on innovation and efficiency, we empower our clients by leveraging the latest in Building Information Modeling (BIM) technologies. Our team of highly skilled architects and BIM professionals ensures that every project is executed with precision and creativity.</p>
+        <p>We collaborate with clients in the USA, UK, Dubai, Australia, and Singapore, providing tailored architectural and BIM solutions that drive excellence in design and execution.</p>
+    </div>
+    
+    <div class="section" id="services">
+        <h2>Our Services</h2>
+        <p>We offer a wide range of architectural and BIM services, including design, drafting, 3D modeling, and project visualization.</p>
     </div>
     
     <div class="section" id="projects">
         <h2>Our Projects</h2>
-        <p>At BIMARCH Studio, we take pride in the diverse portfolio we've built over the past few years. From luxury resorts to modern industrial facilities, each project reflects our commitment to excellence, precision, and innovative design.</p>
-        <ul>
-            <li><b>Hospitality:</b> Luxury Resorts in Dubai, Restaurants in Singapore</li>
-            <li><b>Residential:</b> Modern Villas in Australia, Urban Apartments in New York</li>
-            <li><b>Commercial:</b> Corporate Offices in London, Retail Spaces in Mumbai</li>
-            <li><b>Industrial:</b> Factories in Germany, Warehouses in the US</li>
-        </ul>
+        <p>Take a look at some of our completed projects across residential, commercial, industrial, and hospitality sectors.</p>
     </div>
     
     <div class="section" id="testimonials">
         <h2>Client Testimonials</h2>
-        <p>"BIMARCH Studio delivered outstanding architectural solutions for our commercial project." - A leading interior design firm in the US</p>
-        <p>"Their expertise in BIM modeling helped streamline our industrial project efficiently." - A top engineering consultancy in the UK</p>
-        <p>"Exceptional design and planning services. Highly recommended for any architectural needs." - A renowned construction firm in Canada</p>
+        <p>Our clients trust us to deliver exceptional results. Here's what they have to say about working with us.</p>
     </div>
     
-    <div class="section" id="join">
+    <div class="section" id="careers">
         <h2>Join Us</h2>
-        <p>We are always on the lookout for passionate, talented individuals who share our vision of transforming spaces through innovative design.</p>
+        <p>We are always looking for talented architects and BIM professionals. Whether you're an experienced professional or a student seeking an internship, we welcome you to apply.</p>
+        <form>
+            <label>Name:</label><br>
+            <input type="text" name="name" required><br><br>
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
+            <label>Experience:</label><br>
+            <input type="text" name="experience"><br><br>
+            <label>Education:</label><br>
+            <input type="text" name="education"><br><br>
+            <label>Upload CV & Portfolio:</label><br>
+            <input type="file" name="portfolio"><br><br>
+            <button type="submit">Submit</button>
+        </form>
     </div>
     
-    <div class="section" id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@bimarchstudio.com | Phone: +91 123 456 7890</p>
-        <p>Address: Sector 34, Chandigarh, India</p>
-    </div>
+    <div class="footer">&copy; 2025 BIMARCH Studio. All Rights Reserved.</div>
     
     <script>
-        let slideIndex = 0;
-        showSlides();
-        
-        function showSlides() {
-            let slides = document.getElementsByClassName("slides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000);
+        function toggleSection(id) {
+            document.querySelectorAll('.section').forEach(section => section.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
         }
     </script>
 </body>
-</html>
-
 </html>
