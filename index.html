@@ -10,120 +10,135 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
+            background-color: #fff;
+            overflow-x: hidden;
         }
         header {
-            background: #333;
+            text-align: center;
+            background: #222;
             color: white;
-            padding: 20px;
-            font-size: 24px;
+            padding: 30px;
+            font-size: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+            font-weight: 600;
         }
         .logo {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
         }
         nav {
-            background: #444;
+            text-align: center;
             padding: 15px;
+            background: #333;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-weight: 600;
+            padding: 12px 20px;
             display: inline-block;
-            transition: background 0.3s ease-in-out;
+            font-weight: 600;
+            transition: background 0.3s;
         }
         nav a:hover {
-            background: #555;
+            background: #444;
             border-radius: 5px;
         }
+        .hero {
+            background: url('images/A_modern_architectural_office_building_with_a_glas.png') center/cover no-repeat;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
         .section {
-            display: none;
-            padding: 50px;
+            padding: 60px;
+            text-align: center;
             background: white;
-            margin: 20px auto;
-            max-width: 80%;
+            margin: 40px auto;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.5s ease-in-out;
+            max-width: 900px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
         }
         .slideshow-container {
-            max-width: 100%;
             position: relative;
-            margin: auto;
+            max-width: 100%;
             overflow: hidden;
         }
-        .slides {
+        .slide {
             display: none;
             width: 100%;
-            transition: opacity 1s ease-in-out;
         }
-        .fade {
-            animation: fadeEffect 1s;
-        }
-        @keyframes fadeEffect {
-            from {opacity: 0.4;} 
-            to {opacity: 1;}
-        }
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);}
-            to {opacity: 1; transform: translateY(0);}
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
     <header>
         <img src="images/logo.png" alt="BIMARCH Logo" class="logo">
-        Welcome to BIMARCH Studio
+        BIMARCH Studio
     </header>
     
     <nav>
-        <a href="#" onclick="showSection('about')">About Us</a>
-        <a href="#" onclick="showSection('services')">Services</a>
-        <a href="#" onclick="showSection('projects')">Projects</a>
-        <a href="#" onclick="showSection('testimonials')">Testimonials</a>
-        <a href="#" onclick="showSection('join')">Join Us</a>
-        <a href="#" onclick="showSection('contact')">Contact Us</a>
+        <a href="#about" onclick="showSection('about')">About Us</a>
+        <a href="#services" onclick="showSection('services')">Services</a>
+        <a href="#projects" onclick="showSection('projects')">Projects</a>
+        <a href="#careers" onclick="showSection('careers')">Careers</a>
+        <a href="#contact" onclick="showSection('contact')">Contact Us</a>
     </nav>
     
+    <div class="hero">Innovative Architecture & BIM Solutions</div>
+    
     <div class="slideshow-container">
-        <img class="slides fade" src="images/A_modern_architectural_office_building_with_a_glas.png" alt="Project 1">
-        <img class="slides fade" src="images/A_luxurious_hotel_lobby_with_a_grand_chandelier,_m.png" alt="Project 2">
-        <img class="slides fade" src="images/An_industrial_warehouse_with_a_high-tech_interior,.png" alt="Project 3">
-        <img class="slides fade" src="images/A_high-end_residential_villa_with_a_sleek_modern_d.png" alt="Project 4">
+        <img class="slide" src="images/A_modern_architectural_office_building_with_a_glas.png">
+        <img class="slide" src="images/A_luxurious_hotel_lobby_with_a_grand_chandelier,_m.png">
+        <img class="slide" src="images/An_industrial_warehouse_with_a_high-tech_interior,.png">
+        <img class="slide" src="images/A_high-end_residential_villa_with_a_sleek_modern_d.png">
     </div>
     
     <div class="section" id="about">
         <h2>About Us</h2>
-        <p>BIMARCH Studio is a forward-thinking architecture firm integrating contemporary design with advanced BIM technology. We create spaces that are functional, sustainable, and inspiring.</p>
+        <p>BIMARCH Studio specializes in cutting-edge architectural design and BIM services, delivering precision and excellence.</p>
     </div>
     
     <div class="section" id="services">
         <h2>Our Services</h2>
-        <p>We provide architectural design, BIM modeling, and project management services for global clients in commercial, industrial, and residential sectors.</p>
+        <p>From conceptual design to BIM implementation, we cater to diverse industry needs worldwide.</p>
     </div>
     
     <div class="section" id="projects">
         <h2>Our Projects</h2>
-        <p>From luxury resorts to modern industrial facilities, our projects reflect our commitment to innovation and excellence.</p>
+        <p>Explore our portfolio featuring commercial, industrial, and residential projects.</p>
     </div>
     
-    <div class="section" id="testimonials">
-        <h2>Client Testimonials</h2>
-        <p>"BIMARCH Studio transformed our vision into reality with unmatched precision and creativity."</p>
-    </div>
-    
-    <div class="section" id="join">
-        <h2>Join Us</h2>
-        <p>We are hiring professionals and interns in architecture, BIM, and design visualization. Submit your portfolio to be a part of our growing team.</p>
+    <div class="section" id="careers">
+        <h2>Careers</h2>
+        <p>Join our dynamic team of architects and BIM experts.</p>
+        <button onclick="window.location.href='join.html'">Apply Now</button>
     </div>
     
     <div class="section" id="contact">
@@ -131,28 +146,24 @@
         <p>Email: admin@bimarchstudio.com | Phone: +91 9805232572</p>
     </div>
     
+    <div class="footer">&copy; 2025 BIMARCH Studio. All Rights Reserved.</div>
+    
     <script>
         function showSection(id) {
-            let sections = document.getElementsByClassName("section");
-            for (let section of sections) {
-                section.style.display = "none";
-            }
-            document.getElementById(id).style.display = "block";
+            let sections = document.querySelectorAll(".section");
+            sections.forEach(section => section.classList.remove("active"));
+            document.getElementById(id).classList.add("active");
         }
-        
         let slideIndex = 0;
-        showSlides();
-        
         function showSlides() {
-            let slides = document.getElementsByClassName("slides");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
+            let slides = document.querySelectorAll(".slide");
+            slides.forEach(slide => slide.style.display = "none");
             slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex > slides.length) { slideIndex = 1; }
             slides[slideIndex-1].style.display = "block";
             setTimeout(showSlides, 3000);
         }
+        showSlides();
     </script>
 </body>
 </html>
